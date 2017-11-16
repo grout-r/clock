@@ -37,6 +37,7 @@ if __name__ == '__main__':
     try:
         mcp = PCF8574(PCF8574_address)
     except:
+        print("Wrong")
         try:
              mcp = PCF8574(PCF8574A_address)
         except:
