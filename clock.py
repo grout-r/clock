@@ -30,6 +30,5 @@ def run_scheduled():
 if __name__ == '__main__':
     t = Thread(target=run_scheduled)
     t.start()
-    app.run()
-
+    app.run(host='0.0.0.0')
 
