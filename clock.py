@@ -2,7 +2,9 @@ from flask import Flask
 import schedule
 import time
 from threading import Thread
-import RPi
+import RPi.gpio
+from PCF8574 import PCF8574_GPIO
+from Adafruit_LCD1602 import Adafruit_CharLCD
 
 app = Flask(__name__)
 
