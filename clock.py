@@ -39,7 +39,7 @@ if __name__ == '__main__':
     except:
         print("Wrong")
         try:
-             mcp = PCF8574(1, PCF8574A_address)
+             mcp = PCF8574(30, PCF8574A_address)
         except:
             print('I2C Address Error ! #1')
             exit(1)
