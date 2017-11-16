@@ -3,8 +3,9 @@ import schedule
 import time
 from threading import Thread
 import RPi.GPIO
-from Adafruit_GPIO.PCF8574 import PCF8574,OUT
-import Adafruit_CharLCD as LCD
+from PCF8574 import PCF8574_GPIO
+from Adafruit_LCD1602 import Adafruit_CharLCD
+
 
 app = Flask(__name__)
 
@@ -35,17 +36,16 @@ if __name__ == '__main__':
     PCF8574A_address = 0x3F  # I2C address of the PCF8574A chip.
     # Create PCF8574 GPIO adapter.
     try:
-        mcp = PCF8574(PCF8574_address)
+        mcp = PCF8574_GPIO(PCF8574_address)
     except:
-        print("Wrong")
         try:
-             mcp = PCF8574( PCF8574A_address)
+            mcp = PCF8574_GPIO(PCF8574A_address)
         except:
-            print('I2C Address Error ! #1')
-            exit(1)
-
+            print('I2C Address Error !')
+        exit(1)
     # Create LCD, passing in MCP GPIO adapter.
-    lcd = LCD.Adafruit_CharLCD(0, 2, 4, 5, 6, 7, 16, 2, gpio=mcp)
+    lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4, 5, 6, 7], GPIO=mcp)
+
 
     t = Thread(target=run_scheduled)
     t.start()
