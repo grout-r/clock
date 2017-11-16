@@ -53,6 +53,7 @@ if __name__ == '__main__':
     mcp.output(3, 1)  # turn on LCD backlight
     lcd.begin(16, 2)  #
     lcd.setCursor(0, 0)
+    lcd.noDisplay()
     lcd.message('Hello world ! I\'m happy ' + '\n')  #
 
     t = Thread(target=run_scheduled)
