@@ -49,6 +49,7 @@ if __name__ == '__main__':
     print("la")
     # Create LCD, passing in MCP GPIO adapter.
     lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4, 5, 6, 7], GPIO=mcp)
+    lcd.clear()
     mcp.output(3, 1)  # turn on LCD backlight
     lcd.begin(16, 2)  #
     lcd.message('ta mère la ktin ' + '\n')  #
