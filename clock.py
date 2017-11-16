@@ -35,11 +35,11 @@ if __name__ == '__main__':
     PCF8574A_address = 0x3F  # I2C address of the PCF8574A chip.
     # Create PCF8574 GPIO adapter.
     try:
-        mcp = PCF8574(1, PCF8574_address)
+        mcp = PCF8574(PCF8574_address)
     except:
         print("Wrong")
         try:
-             mcp = PCF8574(1, PCF8574A_address)
+             mcp = PCF8574( PCF8574A_address)
         except:
             print('I2C Address Error ! #1')
             exit(1)
