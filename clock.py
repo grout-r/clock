@@ -37,14 +37,11 @@ if __name__ == '__main__':
     try:
         mcp = PCF8574(PCF8574_address)
     except:
-        print('I2C Address Error ! #2')
-        exit(1)
-
-    try:
-            mcp = PCF8574(PCF8574A_address)
-    except:
-        print('I2C Address Error ! #1')
-        exit(1)
+        try:
+             mcp = PCF8574(PCF8574A_address)
+        except:
+            print('I2C Address Error ! #1')
+            exit(1)
 
     # Create LCD, passing in MCP GPIO adapter.
     lcd = LCD(pin_rs=0, pin_e=2, pins_db=[4, 5, 6, 7], GPIO=mcp)
