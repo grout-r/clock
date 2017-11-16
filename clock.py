@@ -39,8 +39,10 @@ if __name__ == '__main__':
     try:
         mcp = PCF8574_GPIO(PCF8574_address)
     except:
+        print("milieu")
         try:
             mcp = PCF8574_GPIO(PCF8574A_address)
+            print("apres")
         except:
             print('I2C Address Error !')
         exit(1)
