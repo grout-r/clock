@@ -45,7 +45,7 @@ if __name__ == '__main__':
             exit(1)
 
     # Create LCD, passing in MCP GPIO adapter.
-    lcd = LCD.Adafruit_RGBCharLCD(0, 2, [4, 5, 6, 7], gpio=mcp)
+    lcd = LCD.Adafruit_CharLCD(0, 2, [4, 5, 6, 7], gpio=mcp)
 
     t = Thread(target=run_scheduled)
     t.start()
