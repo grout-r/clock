@@ -17,7 +17,7 @@ class music:
 
         station = random.choice(stations)
 
-        tracks = api.get_station_tracks(station)
+        tracks = api.get_station_tracks(station["id"])
 
         print(json.dumps(tracks, sort_keys=True, indent=4, separators=(',', ': ')))
 
