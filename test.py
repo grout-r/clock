@@ -1,6 +1,7 @@
 
 import time
-import DHT as DHT
+
+from lib import DHT as DHT
 
 DHTPin = 11  # define the pin of DHT11
 

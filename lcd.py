@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from PCF8574 import PCF8574_GPIO
-from Adafruit_LCD1602 import Adafruit_CharLCD
+from lib.Adafruit_LCD1602 import Adafruit_CharLCD
+from lib.PCF8574 import PCF8574_GPIO
 
 
 class lcd:
