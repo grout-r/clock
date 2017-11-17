@@ -9,4 +9,4 @@ class temp:
 
     def getTmp(self):
         self.dht.readDHT11(DHTPin)
-        return '{:2d}'.format(self.dht.temperature)
+        return '{:02d}'.format(self.dht.temperature)
