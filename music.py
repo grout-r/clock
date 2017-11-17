@@ -9,7 +9,7 @@ class music:
         library = api.get_all_songs()
 
 
-        url = Mobileclient.get_stream_url(song_id='bc0c11b1-03ea-30a5-bda8-66906c532373', device_id=None, quality=u'hi')
+        url = api.get_stream_url(song_id='bc0c11b1-03ea-30a5-bda8-66906c532373', device_id=None, quality=u'hi')
         print(url)
 
 
