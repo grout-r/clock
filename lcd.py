@@ -29,5 +29,5 @@ class lcd:
         self.lcd.message('Init done.')
 
     def update(self):
-        self.lcd.clear()
+        self.lcd.setCursor(0, 0)
         self.lcd.message(datetime.now().strftime(' %H:%M'))
