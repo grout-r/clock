@@ -1,10 +1,10 @@
+from datetime import datetime
 
 from PCF8574 import PCF8574_GPIO
 from Adafruit_LCD1602 import Adafruit_CharLCD
 
+
 class lcd:
-
-
     def __init__(self):
         PCF8574_address = 0x27
         PCF8574A_address = 0x3F
@@ -24,8 +24,9 @@ class lcd:
         self.mcp.output(3, 1)
         self.lcd.begin(16, 2)
         self.lcd.setCursor(0, 0)
-        self.lcd.message('Init done.')
-
 
     def printWelcome(self):
-        lcd.message('Init done.')
+        self.lcd.message('Init done.')
+
+    def update(self):
+        self.lcd.message(datetime.now().strftime(' %H:%M:%S'))

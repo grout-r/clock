@@ -23,15 +23,17 @@ def ring():
     print("Drrrrrriiinng")
 
 
-def run_scheduled():
-    while 1:
+def loop():
+    while True:
         schedule.run_pending()
+        lcd.update()
         time.sleep(1)
 
 if __name__ == '__main__':
     lcd = lcd()
+    lcd.printWelcome()
 
-    t = Thread(target=run_scheduled)
+    t = Thread(target=loop)
     t.start()
     app.run(host='0.0.0.0')
 
