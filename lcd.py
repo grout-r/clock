@@ -30,4 +30,4 @@ class lcd:
 
     def update(self):
         self.lcd.clear()
-        self.lcd.message(datetime.now().strftime(' %H:%M:%S'))
+        self.lcd.message(datetime.now().strftime(' %H:%M'))
