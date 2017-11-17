@@ -4,6 +4,7 @@ import time
 from threading import Thread
 import RPi.GPIO
 from lcd import lcd
+from test import loop2
 
 app = Flask(__name__)
 
@@ -32,6 +33,8 @@ def loop():
 if __name__ == '__main__':
     lcd = lcd()
     lcd.printWelcome()
+
+    loop2()
 
     t = Thread(target=loop)
     t.start()
