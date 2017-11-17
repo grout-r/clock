@@ -20,7 +20,7 @@ class lcd:
                 print('I2C Address Error !')
                 exit(1)
         # Create LCD, passing in MCP GPIO adapter.
-        self.lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4, 5, 6, 7], GPIO=mcp)
+        self.lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4, 5, 6, 7], GPIO=self.mcp)
         self.mcp.output(3, 1)
         self.lcd.begin(16, 2)
         self.lcd.setCursor(0, 0)
