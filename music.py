@@ -8,6 +8,8 @@ class music:
 
         library = api.get_all_songs()
 
-        for track in library:
-            print(track)
+
+        url = Mobileclient.get_stream_url('bc0c11b1-03ea-30a5-bda8-66906c532373', device_id=None, quality=u'hi')
+        print(url)
+
 
