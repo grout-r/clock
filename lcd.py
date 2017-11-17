@@ -24,7 +24,6 @@ class lcd:
         self.lcd.setCursor(0, 0)
 
     def printWelcome(self):
-        self.lcd.message('Init done.')
 
     def update(self, tmp):
         self.lcd.setCursor(0, 0)
