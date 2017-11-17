@@ -1,14 +1,11 @@
 from gmusicapi import Mobileclient
 
-import gmusicapi
 
 api = Mobileclient()
-api.login('user@gmail.com', 'my-password', Mobileclient.FROM_MAC_ADDRESS)
-# => True
+api.login('roman.grout@gmail.com', 'romgroGMAIL95', Mobileclient.FROM_MAC_ADDRESS)
 
 library = api.get_all_songs()
-sweet_track_ids = [track['id'] for track in library
-                   if track['artist'] == 'The Cat Empire']
 
-playlist_id = api.create_playlist('Rad muzak')
-api.add_songs_to_playlist(playlist_id, sweet_track_ids)
+for track in library:
+    print(track)
+
