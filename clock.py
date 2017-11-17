@@ -31,8 +31,8 @@ def loop():
         time.sleep(1)
 
 if __name__ == '__main__':
-    lcd = lcd()
-    lcd.printWelcome()
+    # lcd = lcd()
+    # lcd.printWelcome()
 
     loop2()
 
