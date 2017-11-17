@@ -28,4 +28,5 @@ class lcd:
 
     def update(self, tmp):
         self.lcd.setCursor(0, 0)
-        self.lcd.message(datetime.now().strftime('%H:%M:%S\nIN:' + tmp.getTmp() + "°C"))
+
+        self.lcd.message(datetime.now().strftime('%H:%M:%S\nIN:' + tmp.getTmp() + "C"))
