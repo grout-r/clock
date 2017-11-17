@@ -21,7 +21,7 @@ class music:
 
         print(json.dumps(tracks, sort_keys=True, indent=4, separators=(',', ': ')))
 
-        url = api.get_stream_url(song_id='bc0c11b1-03ea-30a5-bda8-66906c532373', device_id=None, quality=u'hi')
+        url = api.get_stream_url(tracks[0]['id'], device_id=None, quality=u'hi')
         print(url)
 
         p = vlc.MediaPlayer(url)
