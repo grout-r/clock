@@ -31,7 +31,6 @@ def loop():
 
 if __name__ == '__main__':
     lcd = lcd()
-    lcd.printWelcome()
     tmp = temp()
 
 
