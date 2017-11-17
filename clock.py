@@ -2,9 +2,8 @@ from flask import Flask
 import schedule
 import time
 from threading import Thread
-import RPi.GPIO
 from lcd import lcd
-from test import loop2
+from temp import temp
 
 app = Flask(__name__)
 
@@ -27,14 +26,14 @@ def ring():
 def loop():
     while True:
         schedule.run_pending()
-        lcd.update()
+        lcd.update(tmp)
         time.sleep(1)
 
 if __name__ == '__main__':
-    # lcd = lcd()
-    # lcd.printWelcome()
+    lcd = lcd()
+    lcd.printWelcome()
+    tmp = temp()
 
-    loop2()
 
     t = Thread(target=loop)
     t.start()

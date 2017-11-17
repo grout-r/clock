@@ -28,6 +28,6 @@ class lcd:
     def printWelcome(self):
         self.lcd.message('Init done.')
 
-    def update(self):
+    def update(self, tmp):
         self.lcd.setCursor(0, 0)
-        self.lcd.message(datetime.now().strftime('%H:%M:%S'))
+        self.lcd.message(datetime.now().strftime('%H:%M:%S\nIN:' + tmp.getTmp + "°C"))
