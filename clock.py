@@ -2,8 +2,10 @@ from flask import Flask
 import schedule
 import time
 from threading import Thread
+
 from lcd import lcd
 from temp import temp
+from music import music
 
 app = Flask(__name__)
 
@@ -32,6 +34,8 @@ def loop():
 if __name__ == '__main__':
     lcd = lcd()
     tmp = temp()
+
+    music = music()
 
 
     t = Thread(target=loop)
