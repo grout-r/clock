@@ -24,4 +24,4 @@ def loop2():
             print("Other error!")
 
         print("Humidity : %.2f, \t Temperature : %.2f \n" % (dht.humidity, dht.temperature))
-        time.sleep(1)
+        time.sleep(2)
