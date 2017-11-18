@@ -14,7 +14,7 @@ class Music:
     def load_random(self):
         stations = self.api.get_all_stations()
         station = random.choice(stations)
-        self.api.get_station_tracks(station["id"])
+        self.tracks = self.api.get_station_tracks(station["id"])
 
     def play_random(self):
         url = self.api.get_stream_url(self.tracks[self.index]['nid'], device_id=None, quality=u'hi')
