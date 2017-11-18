@@ -3,28 +3,29 @@ import vlc
 import json
 import random
 
-class music:
+
+class Music:
     def __init__(self):
-        api = Mobileclient()
-        api.login('roman.grout@gmail.com', 'romgroGMAIL95', Mobileclient.FROM_MAC_ADDRESS)
+        self.index = 0
+        self.tracks = []
+        self.api = Mobileclient()
+        self.api.login('roman.grout@gmail.com', 'romgroGMAIL95', Mobileclient.FROM_MAC_ADDRESS)
 
-
-       # library = api.get_all_songs()
-
-
-        stations = api.get_all_stations()
-
-
+    def load_random(self):
+        stations = self.api.get_all_stations()
         station = random.choice(stations)
+        self.api.get_station_tracks(station["id"])
 
-        tracks = api.get_station_tracks(station["id"])
+    def play_random(self):
+        url = self.api.get_stream_url(self.tracks[self.index]['nid'], device_id=None, quality=u'hi')
+        self.player = vlc.MediaPlayer(url)
+        self.player.play()
 
-        print(json.dumps(tracks, sort_keys=True, indent=4, separators=(',', ': ')))
+    def update(self):
+        # todo update
+        pass
 
-        url = api.get_stream_url(tracks[0]['nid'], device_id=None, quality=u'hi')
-        print(url)
-
-        p = vlc.MediaPlayer(url)
-        p.play()
-
-
+    def next_song(self):
+        self.index += 1
+        self.play_random()
+        pass
