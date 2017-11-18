@@ -30,7 +30,7 @@ def loop():
     while True:
         schedule.run_pending()
         lcd.update(tmp)
-        if GPIO.input(buttonPin) == GPIO.LOW:
+        if GPIO.input(12) == GPIO.LOW:
             music.next_song()
         time.sleep(1)
 
