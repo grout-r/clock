@@ -6,6 +6,7 @@ from threading import Thread
 from lcd import lcd
 from temp import temp
 from music import Music
+from lamp import lamp
 import RPi.GPIO as GPIO
 
 app = Flask(__name__)
@@ -32,16 +33,18 @@ def loop():
         lcd.update(tmp)
         if GPIO.input(12) == GPIO.LOW:
             print("next")
-            music.next_song()
+            # music.next_song()
         time.sleep(1)
 
 if __name__ == '__main__':
     lcd = lcd()
     tmp = temp()
+    lamp = lamp()
 
-    music = Music()
-    music.load_random()
-    music.play_random()
+    lamp.switch_on()
+    # music = Music()
+    # music.load_random()
+    # music.play_random()
 
     buttonPin = 12  # define the buttonPin
     GPIO.setmode(GPIO.BOARD)
