@@ -46,7 +46,6 @@ if __name__ == '__main__':
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-
     t = Thread(target=loop)
     t.start()
     app.run(host='0.0.0.0')

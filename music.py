@@ -9,6 +9,7 @@ class Music:
         self.index = 0
         self.tracks = []
         self.api = Mobileclient()
+        print("logged")
         self.api.login('roman.grout@gmail.com', 'romgroGMAIL95', Mobileclient.FROM_MAC_ADDRESS)
 
     def load_random(self):
