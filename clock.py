@@ -19,7 +19,6 @@ def hello_world():
 
 @app.route("/add")
 def add():
-    schedule.every(1).seconds.do(ring)
     schedule.every().day.at(request.args.get("time")).do(ring)
     return "coucou"
 
