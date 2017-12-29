@@ -1,7 +1,7 @@
 import yeelight
 
 
-class lamp:
+class Lamp:
     def __init__(self):
         self.desk = yeelight.Bulb("192.168.1.47", duration=1000)
         pass

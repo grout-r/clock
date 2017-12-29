@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import schedule
 import time
 from threading import Thread
@@ -6,7 +6,7 @@ from threading import Thread
 from lcd import lcd
 from temp import temp
 from music import Music
-from lamp import lamp
+from lamp import Lamp
 import RPi.GPIO as GPIO
 
 app = Flask(__name__)
@@ -20,11 +20,14 @@ def hello_world():
 @app.route("/add")
 def add():
     schedule.every(1).seconds.do(ring)
+    schedule.every().day.at(request.args.get("time")).do(ring)
     return "coucou"
 
 
 def ring():
-    print("Drrrrrriiinng")
+    print("ring")
+    lamp.switch_on()
+    pass
 
 
 def loop():
@@ -39,9 +42,8 @@ def loop():
 if __name__ == '__main__':
     lcd = lcd()
     tmp = temp()
-    lamp = lamp()
+    lamp = Lamp()
 
-    lamp.switch_on()
     # music = Music()
     # music.load_random()
     # music.play_random()
