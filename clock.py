@@ -20,9 +20,9 @@ def hello_world():
 @app.route('/add')
 def add():
     if 'time' not in request.args or not check_time(request.args['time']):
-        return 'grosse erreur mamene', 400
+        return 'Error', 400
     schedule.every().day.at(request.args.get('time')).do(ring)
-    return "coucou", 200
+    return 'OK', 200
 
 def check_time(time):
     try:
