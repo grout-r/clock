@@ -9,6 +9,7 @@ class Lamp:
     def switch_on(self):
         try:
             self.desk.turn_on()
+        except:
+            pass
         finally:
             pass
-    
