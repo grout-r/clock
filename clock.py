@@ -7,6 +7,7 @@ from lcd import lcd
 from temp import temp
 from music import Music
 from lamp import Lamp
+from time import sleep
 import RPi.GPIO as GPIO
 
 app = Flask(__name__)
