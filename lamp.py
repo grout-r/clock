@@ -7,4 +7,8 @@ class Lamp:
         pass
 
     def switch_on(self):
-        self.desk.turn_on()
+        try:
+            self.desk.turn_on()
+        finally:
+            pass
+    
