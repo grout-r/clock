@@ -16,4 +16,4 @@ class temp:
             print("DHTLIB_ERROR_TIMEOUT!")
         else:  # other errors
             print("Other error!")
-        return "21"
+        return self.cache
