@@ -60,7 +60,7 @@ if __name__ == '__main__':
     music.load_random()
     music.play_random()
     lamp.switch_on()
-    lcd.wake_up()
+    lcd.wake_up(tmp)
 
     buttonPin = 12  # define the buttonPin
     GPIO.setmode(GPIO.BOARD)
