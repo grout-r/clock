@@ -37,7 +37,6 @@ def check_time(time):
 
 def ring():
     print("ring")
-    # lamp.switch_on()
     pass
 
 
@@ -47,17 +46,20 @@ def loop():
         lcd.update(tmp)
         if GPIO.input(12) == GPIO.LOW:
             print("next")
-            # music.next_song()
+            music.next_song()
         time.sleep(1)
 
 if __name__ == '__main__':
     lcd = lcd()
     tmp = temp()
     lamp = Lamp()
-
+    lcd.update(tmp)
+    sleep(5)
     music = Music()
     music.load_random()
     music.play_random()
+    lamp.switch_on()
+    lcd.wake_up()
 
     buttonPin = 12  # define the buttonPin
     GPIO.setmode(GPIO.BOARD)

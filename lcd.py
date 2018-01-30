@@ -29,3 +29,7 @@ class lcd:
     def update(self, tmp):
         self.lcd.setCursor(0, 0)
         self.lcd.message(datetime.now().strftime('%H:%M\nIN:' + tmp.getTmp()))
+
+    def wake_up(self, tmp):
+        self.lcd.setCursor(0, 0)
+        self.lcd.message(datetime.now().strftime('%H:%M - WAKE UP\nIN:' + tmp.getTmp()))
