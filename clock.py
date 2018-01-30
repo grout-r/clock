@@ -24,6 +24,7 @@ def add():
     schedule.every().day.at(request.args.get('time')).do(ring)
     return 'OK', 200
 
+
 def check_time(time):
     try:
         time = time.split(':')
@@ -32,6 +33,7 @@ def check_time(time):
     except ValueError as e:
         return False
     return True
+
 
 def ring():
     print("ring")

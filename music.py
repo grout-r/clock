@@ -10,7 +10,7 @@ class Music:
         self.tracks = []
         self.api = Mobileclient()
         print("logged")
-        self.api.login('roman.grout@gmail.com', 'xxxx', Mobileclient.FROM_MAC_ADDRESS)
+        self.api.login('roman.grout@gmail.com', 'romgroGMAIL95', Mobileclient.FROM_MAC_ADDRESS)
 
     def load_random(self):
         stations = self.api.get_all_stations()
